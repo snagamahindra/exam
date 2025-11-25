@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { margin: 0; background-color: #f1f8e9; display: flex; align-items: center; justify-content: center; height: 100vh; overflow: hidden; }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <img id="display-image" src="" alt="Displayed Image">
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const imageName = urlParams.get('img');
+        if (imageName) {
+            document.getElementById('display-image').src = imageName;
+        }
+    </script>
+</body>
+</html>

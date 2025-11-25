@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Frames Example</title>
+  </head>
+
+  <frameset rows="50%, 50%">
+    <frameset cols="50%, 50%">
+      
+      <frame src="
+       <font size= 5 color=#660099>
+      <center> This table is withoout border</center>
+      <br>
+       <table>
+     <tr>
+            <th> month
+            <th> usage
+     </tr>
+
+ <tr>
+            <th> 1
+            <th> 100kg
+     </tr>
+
+       </table>
+
+      ">
+
+            <frame src="
+        <h3 style='text-align:center;'>Scrollable Images</h3>
+        <div style='white-space:nowrap; overflow-x:auto;'>
+          <img src='https://via.placeholder.com/120x80/FF5733'>&nbsp;
+          <img src='https://via.placeholder.com/120x80/33FF57'>&nbsp;
+          <img src='https://via.placeholder.com/120x80/3357FF'>&nbsp;
+          <img src='https://via.placeholder.com/120x80/FF33A6'>&nbsp;
+          <img src='https://via.placeholder.com/120x80/FFD433'>
+        </div>
+      ">
+    </frameset>
+
+    <frameset cols="50%, 50%">
+      
+      <frame src="
+        <h3 style='text-align:center;'>Click an Image Button</h3>
+        <script>
+          function showImage(src) {
+            parent.displayFrame.document.body.innerHTML =
+              '<img src=' + src + ' style=\'max-width:100%; max-height:100%;\'>';
+          }
+        </script>
+        <div style='text-align:center;'>
+          <img src='https://via.placeholder.com/120x80/FF5733' onclick='showImage(this.src)'>
+          <img src='https://via.placeholder.com/120x80/33FF57' onclick='showImage(this.src)'>
+          <img src='https://via.placeholder.com/120x80/3357FF' onclick='showImage(this.src)'>
+          <img src='https://via.placeholder.com/120x80/FF33A6' onclick='showImage(this.src)'>
+        </div>
+      ">
+
+      
+      <frame name="displayFrame" src="
+        <h3 style='text-align:center;'>Select an image from above buttons</h3>
+      ">
+    </frameset>
+  </frameset>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { overflow: hidden; margin: 0; background-color: #fce4ec; }
+        
+        .image-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100vh; /* Set height to viewport height for the container */
+        }
+        
+        .image-container img {
+            width: 100vw; /* Make each image take up the full viewport width */
+            height: 100vh; /* Make each image take up the full viewport height */
+            flex-shrink: 0;
+            object-fit: contain; /* This is the key property to fit the image */
+        }
+    </style>
+</head>
+<body>
+    <div id="scrolling-images" class="image-container"></div>
+    <script>
+        const container = document.getElementById('scrolling-images');
+        const imageFiles = ['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg'];
+        let currentIndex = 0;
+        
+        function loadImages() {
+            imageFiles.forEach(file => {
+                const img = document.createElement('img');
+                img.src = file;
+                container.appendChild(img);
+            });
+        }
+        
+        function scrollImages() {
+            currentIndex = (currentIndex + 1) % imageFiles.length;
+            const newTransform = -currentIndex * 100;
+            container.style.transform = `translateX(${newTransform}%)`;
+        }
+        
+        loadImages();
+        setInterval(scrollImages, 2000); // Scrolls every 2 seconds
+    </script>
+</body>
+</html>
